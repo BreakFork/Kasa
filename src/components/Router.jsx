@@ -1,22 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from '../pages/Home';
-import Housing from '../pages/Housing';
-import About from '../pages/About';
-import Error from '../pages/Error';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from '../pages/home/Home';
+import Housing from '../pages/housing/Housing';
+import About from '../pages/about/About';
+import Error from '../pages/error/Error';
 
 const Router = () => {
     return (
-        <div>
             <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/housing/:housingId" element={<Housing />} />
-                    <Route path="/housing/*" element={<Error />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="*" element={<Error />} />
-                </Routes>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/housing/:housingId" element={<Housing />} />
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={<Error />} />
+            </Routes>
             </BrowserRouter>
-        </div>
     );
 };
 

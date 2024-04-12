@@ -1,0 +1,24 @@
+@use "../../styles/main.scss";
+
+.navbar  {
+    @include main.main-font;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar__logo {
+        max-width: 210px;
+    }
+
+    .navbar__links {
+        display: flex;
+        
+        .navbar__link {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            padding: 0 28px;
+        }
+    }
+}

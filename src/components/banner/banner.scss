@@ -1,0 +1,30 @@
+@use "../../styles/main.scss";
+
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 233px;
+    margin: 45px 100px 50px 100px;
+    border-radius:  25px;
+
+    .banner__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(60%);
+    }
+
+    .banner__tile {
+        position: absolute;
+        @include main.main-font;
+        font-size: 48px;
+        color: white;
+        font-weight:  700;
+        text-align: center;
+    }
+
+}
