@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+// VARIABLES ///////////////
+
+/* COLORS */
+$brand-crl: #FF6060;
+
+/* FONT SIZES */
+$ft-size-1: 12px;
+$ft-size-2: 14px;
+$ft-size-3: 18px;
+$ft-size-4: 24px;
+$ft-size-5: 36px;
+$ft-size-6: 48px;
+$ft-size-7: 288px;
+
+// MIXINS ///////////////////
+
+/* FONT NAVBAR AND FOOTER - LARGE SCREENS*/
+@mixin font-lg-screen {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+// RESET ////////////////////
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/////////////////////////////
+
+body {
+    // width: 100%;
+    // max-width: 1440px;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    .main-wrapper {
+        max-width: 1440px;
+        height: 100%;
+        padding: 45px 0 0 0;
+        // background-color: grey;
+    }
+}
+

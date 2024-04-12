@@ -1,0 +1,35 @@
+@import "../../styles/main.scss";
+// $ft-size-6: 48px;
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 233px;
+    width: 100%;
+    max-width: 1240px;
+    margin: 45px 0 0 0;
+    // margin: 45px 100px 50px 100px;
+    color: white;
+    // border-radius:  25px;
+
+    .banner__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 233px;
+        border-radius: 25px;
+        object-fit: cover;
+        filter: brightness(42%);
+        z-index: -1;
+    }
+
+    .banner__title {
+        position: absolute;
+        font-size: $ft-size-6;
+        text-align: center;
+        z-index: 1;
+    }
+
+}
