@@ -4,10 +4,10 @@ import './header.scss';
 
 const Header = () => {
     return (
-        <header> 
-            <nav className="navbar">
-                <img className="navbar__logo" src={logo} alt="Logo du site Kasa" />
-                <div className="navbar__links">
+        <header className = "header"> 
+            <img className="header__logo" src={logo} alt="Logo du site Kasa" />
+            <nav className="navbar">                
+                {/* <div className="navbar__links"> */}
                     <NavLink 
                         to="/"
                         className="navbar__link"  
@@ -20,7 +20,7 @@ const Header = () => {
                     >
                         A propos
                     </NavLink>
-                </div>
+                {/* </div> */}
             </nav>
         </header>
     );

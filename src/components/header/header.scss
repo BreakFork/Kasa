@@ -1,42 +1,68 @@
 @use "../../styles/main.scss";
 
 .header {
-    
+    min-width: 100%;
     max-width: 1240px;
-    height: 68px;
-    
-    // display: flex;
-    // justify-content: space-between;
-    // background-color: red;
+    margin-bottom: 27px;
+    display: flex;
+    justify-content: space-between;
 
+    @include main.breakpoint-desktop {
+            height: 68px;
+            margin-bottom: 45px;            
+        }
 
+    .header__logo {
+        max-width: 145px;
+        height: 47px;
+
+        @include main.breakpoint-desktop {
+            max-width: 211px;
+            height: 68px;
+        }
+    }
 }
 
 .navbar  {
-    // @include main.main-font;
+    width: 100%;
+    max-width: 1240px;
     font-weight: 500;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 1240px;
-    
-    .navbar__logo {
-        max-width: 210px;
-    }
+    place-content: flex-end;
+        
+    .navbar__link  {
+        color: black;
+        cursor: pointer;
+        text-decoration: none;
 
-    .navbar__links {
-        display: flex;
-        justify-content: space-between;
-        
-        .navbar__link  {
-            @include main.font-lg-screen;
-            
-            color: black;
-            padding: 0 28px;
-        
-            &.active {
+        &.active {
                 text-decoration: underline;
             }
+        
+        @include main.breakpoint-mobile-m {
+            font-size: map-get(main.$font-sizes, size-1);
+            text-transform: uppercase;
+            
+            &.navbar__link:first-child {
+                    margin-right: 25px;
+                }
+            }
+        @include main.breakpoint-mobile-l {
+            font-size: map-get(main.$font-sizes, size-2);
+
+            &.navbar__link:first-child {
+                    margin-right: 30px;
+                }
         }
-    }
+        @include main.breakpoint-desktop {
+            font-size: map-get(main.$font-sizes, size-4);
+            text-transform: lowercase;
+            text-transform: capitalize;
+
+            &.navbar__link:first-child {
+                    margin-right: 80px;
+                }
+        }  
+    }       
 }
