@@ -1,0 +1,12 @@
+@use 'sass:math';
+
+// FUNCTIONS ///////////////////////
+
+// Converts px values to em.
+@function toEm($px) {
+    @if not $px {
+        @error 'Missing argument: `$px`.';
+    }
+
+    @return math.div($px, 16)+rem;
+};

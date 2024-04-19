@@ -1,0 +1,47 @@
+@import "./_functions.scss";
+
+// VARIABLES ///////////////
+
+/* body wrapper */
+$wrapper-min-width: toEm(375);  /* 375px --> 23,4375em */
+$wrapper-max-width: 90em;       /* 1440px --> 90em      */
+
+/* safe breakpoint for desktop */
+$bp-safe-desktop: toEm(769);   /* 769px --> 48.0625em */
+
+/* breakpoints */
+$breakpoints: (
+    sm: toEm(350),              /* 21,875em --> 350px */
+    sm-lg: toEm(424),           /* 26.5625em --> 425px */
+    md: 48em,                   /* 48em --> 768px */
+    lg: 62em,                   /* 62em --> 992px */
+    xl: 75em,                   /* 75em --> 1200px */
+    mobile-m: toEm(375),        /* 375px --> 23,4375em */
+    mobile-l: toEm(425),        /* 425px --> 26,5625em */
+    desktop: 48em,              /* 768px --> 48em      */
+    banner-break-md: toEm(500), /* 500px --> 31.25em */
+    banner-break-lg: 900px,
+);
+
+/* IMG HEIGHT BANNER */
+$responsive-height: (
+    sm: toEm(111),   /* 6,9375em --> 111px */
+    lg: toEm(223)    /* 13,9375em --> 223px */
+);
+
+/* COLORS */
+$colors: (
+    brand-crl: #FF6060,
+);
+
+/* FONT SIZES */
+$font-sizes: (
+    size-1: 0.7500em,  /* 12px */
+    size-2: 0.8750em,  /* 14px */
+    size-3: 1.1250em,  /* 18px */
+    size-4: 1.500em,   /* 24px */
+    size-5: 2.25em,      /* 36px */
+    size-6: 3em,       /* 48px */
+    size-7: 18h,        /* 288px */
+    size-banner-md: 1.700em,
+);

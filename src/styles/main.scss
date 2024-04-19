@@ -1,105 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-// VARIABLES ///////////////
-
-/* IMG HEIGHT BANNER */
-$responsive-height: (
-    sm: 111px,
-    lg: 223px
-);
-
-/* COLORS */
-$brand-crl: #FF6060;
-
-/* FONT SIZES */
-
-$font-sizes: (
-    size-1: 12px,
-    size-2: 14px,
-    size-3: 18px,
-    size-4: 24px,
-    size-5: 36px,
-    size-6: 48px,
-    size-7: 288px
-);
-
-$breakpoints: (
-    mobile-m: 375px,
-    mobile-l: 425px,
-    desktop: 768px
-);
-
-// MIXINS ///////////////////////////////////////////////////////////
-
-/* FONT NAVBAR AND FOOTER - LARGE SCREENS */
-@mixin font-lg-screen {
-    font-size: map-get($font-sizes, size-4);
-    text-decoration: none;
-}
-
-@mixin breakpoint-mobile-m {
-    @media screen and (min-width: map-get($breakpoints, mobile-m)) {
-        @content;
-    }
-}
-
-@mixin breakpoint-mobile-l {
-    @media screen and (min-width: map-get($breakpoints, mobile-l)) {
-        @content;
-    }
-}
-
-@mixin breakpoint-desktop {
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-        @content;
-    }
-}
-
-// RESET ////////////////////
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-/////////////////////////////
+@import "./partials/_reset.scss";
+@import "./partials/_variables.scss";
+// @import "./partials/_functions.scss";
+@import "./partials/_mixins.scss";
 
 body {
-    width: 100%;
+    // @include wrapper;
     font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     // background-color: yellow;
+        // }
+    // @include breakpoint-mobile-m {
+
+    // }
+
+    // @include breakpoint-mobile-l {
+
+    // }
+
+    // @include breakpoint-desktop {
+    //     min-width: 100%;
+    //     width: $wrapper-max-width;
+    //     background-color: yellow;
+    // }
 }
 
-.root-container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    @include breakpoint-mobile-m {
-        max-width: 375px;
-        padding: 20px 25px 0 25px;
-        // background-color: grey;
-    }
-    @include breakpoint-mobile-l {
-        max-width: 425px;
-        // background-color: tomato;
-    }
-    @include breakpoint-desktop {
-        max-width: 1440px;
-        height: 100%;
-        padding: 45px 100px 0 100px;
-        // background-color: grey;
-        // border-left: 1px solid black;
-        // border-right: 1px solid black;
-    }
-}

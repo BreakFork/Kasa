@@ -1,0 +1,53 @@
+@use "sass:map";
+// MIXINS ////////////////////////
+
+/* main wrapper */
+@mixin wrapper {
+    // margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: $wrapper-min-width;
+    max-width: $wrapper-max-width;
+}
+
+/* break points */
+/* FONT NAVBAR AND FOOTER - LARGE SCREENS */
+
+@mixin media-query($key) {
+    $size: map-get($breakpoints, $key);
+
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin banner-bridge-query {
+    @media screen and (min-width: 388px) and (max-width: 423px) {
+        width: 68%;
+        font-size: map-get($font-sizes, size-banner-md);
+        // background-color: grey;
+    }
+}
+
+@mixin font-lg-screen {
+    font-size: map.get($font-sizes, size-4);
+    text-decoration: none;
+}
+
+@mixin breakpoint-mobile-m {
+    @media screen and (min-width: map.get($breakpoints, mobile-m)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-mobile-l {
+    @media screen and (min-width: map.get($breakpoints, mobile-l)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-desktop {
+    @media screen and (min-width: map.get($breakpoints, desktop)) {
+        @content;
+    }
+}

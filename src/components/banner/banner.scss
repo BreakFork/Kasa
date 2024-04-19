@@ -1,79 +1,63 @@
 @use "../../styles/main.scss";
 
-// $responsive-height: 223px;
-// $banner-img-height: $responsive-height;
-
 .banner {
     position: relative;
-    display: flex;
-    align-items: center;
-    // justify-content: center;
-    // height: 233px;
-    // width: 100%;
-    // max-width: 1240px;
-    // margin: 45px 0 0 0;
-    color: white;
+    width: 100%;
 
-    @include main.breakpoint-mobile-m {
-        // align-content: flex-start;
+    &__img {
         height: map-get(main.$responsive-height, sm);
-        // background-color: red;
-    }
-
-    @include main.breakpoint-mobile-l {
-        font-size: map-get(main.$font-sizes, size-2);
-        // align-items: center; 
-        // background-color: orange;
-    }
-
-    @include main.breakpoint-desktop {
-        height: map-get(main.$responsive-height, lg);
-        font-size: map-get(main.$font-sizes, size-6);
-        width: 100%;
-        max-width: 1240px;
-        justify-content: center;
-        // background-color: purple;
-    }
-
-    .banner__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 25px;
+        border-radius: 10px;
         filter: brightness(33%);
-        z-index: -1;
 
-        @include main.breakpoint-mobile-m {
-            height: map-get(main.$responsive-height, sm);
-            border-radius: 10px;
-        }
-        @include main.breakpoint-desktop {
-            height: map-get(main.$responsive-height, lg);
+        @include main.media-query(md) {
             border-radius: 25px;
-            box-shadow: 0px 4px 15px #F6F6F6;
+            height: map-get(main.$responsive-height, lg);
         }
     }
 
-    .banner__title {
+    &__title {
+        // background-color: olive;
+        color: white;
+        font-size: map-get(main.$font-sizes, size-4);
+        font-weight: 500;
+        line-height: 100%;
+        width: 66%;
+        transform: translateY(-50%);
         position: absolute;
-        font-weight: 600;
-        z-index: 1;
+        top: 50%;
+        left: 1em;
 
-        @include main.breakpoint-mobile-m {
+        @include main.banner-bridge-query;
+
+        @include main.media-query(sm-lg) {
+            left: 0;
+            width: 100%;
+            text-align: center;
             font-size: map-get(main.$font-sizes, size-4);
-            max-width: 225px;
-            margin-left: 20px;
+            // background-color: blue;
         }
         
-        @include main.breakpoint-mobile-l {
-            font-size: map-get(main.$font-sizes, size-4);
-            max-width: 230px;
+        @include main.media-query(banner-break-md) {
+            left: 0;
+            text-align: center;
+            width: 100%;
+            font-size: map-get(main.$font-sizes, size-banner-md);
+            // background-color: red;
         }
-    
-        @include main.breakpoint-desktop {
-            max-width: 100%;
-            margin: auto;
+
+        @include main.media-query(banner-break-lg) {
+            font-size: map-get(main.$font-sizes, size-banner-md);
+            // background-color: yellow;
+        }
+
+        @include main.media-query(md) {
             font-size: map-get(main.$font-sizes, size-5);
+            // background-color: purple;
+        }
+
+        @include main.media-query(banner-break-lg) {
+            font-size: map-get(main.$font-sizes, size-6);
+            // background-color: orange;
         }
     }
 }

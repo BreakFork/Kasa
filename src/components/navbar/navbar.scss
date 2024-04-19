@@ -1,20 +1,27 @@
 @use "../../styles/main.scss";
+@use "sass:map";
 
-.header {
-    min-width: 100%;
+
+.navbar-container {
+    width: 100%;
     max-width: 1240px;
-    margin-bottom: 27px;
+    // margin-bottom: 27px;
+    // padding: 0;
     display: flex;
+    align-content: center;
     justify-content: space-between;
+    // background-color: olive;
 
     @include main.breakpoint-desktop {
             height: 68px;
-            margin-bottom: 45px;            
+            // margin-bottom: 45px;            
         }
 
-    .header__logo {
+    &__logo {
         max-width: 145px;
         height: 47px;
+        // max-width: 9.0625rem;
+        // height: 2,9375em;
 
         @include main.breakpoint-desktop {
             max-width: 211px;
@@ -23,40 +30,39 @@
     }
 }
 
-.navbar  {
-    width: 100%;
-    max-width: 1240px;
+.navbar-container__navbar  {
     font-weight: 500;
     display: flex;
     align-items: center;
     place-content: flex-end;
+    width: 100%;
         
     .navbar__link  {
         color: black;
         cursor: pointer;
-        text-decoration: none;
+        // text-decoration: none;
 
         &.active {
                 text-decoration: underline;
             }
         
         @include main.breakpoint-mobile-m {
-            font-size: map-get(main.$font-sizes, size-1);
+            font-size: map.get(main.$font-sizes, size-1);
             text-transform: uppercase;
             
             &.navbar__link:first-child {
-                    margin-right: 25px;
+                    margin-right: 13px;
                 }
             }
         @include main.breakpoint-mobile-l {
-            font-size: map-get(main.$font-sizes, size-2);
+            font-size: map.get(main.$font-sizes, size-2);
 
             &.navbar__link:first-child {
                     margin-right: 30px;
                 }
         }
         @include main.breakpoint-desktop {
-            font-size: map-get(main.$font-sizes, size-4);
+            font-size: map.get(main.$font-sizes, size-4);
             text-transform: lowercase;
             text-transform: capitalize;
 

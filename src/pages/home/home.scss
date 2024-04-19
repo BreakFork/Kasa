@@ -1,2 +1,34 @@
 @use "../../styles/main.scss";
 
+.wrapper {
+    @include main.wrapper;
+    // background-color: aqua;
+}
+
+header {
+    
+    // margin: 5.868% 5.868% 0 5.868%;  /* 22px --> breakpoint: 375px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 27px;
+    // background-color: orange;
+
+    @include main.media-query(sm) {
+            // background-color: orange;
+        margin: 1.25em 1.375em 0 1.375em;
+        }
+    @include main.media-query(md) {
+        // background-color: grey;
+        margin: 45px 5.868% 0 5.868%;
+    }
+    @include main.media-query(lg) {
+        // background-color: purple;
+        margin: 45px 5.868% 50px 5.868%;
+    }
+    @include main.media-query(xl) {
+        // background-color: mediumaquamarine;
+        // margin: 45px 5.868% 50px 5.868%;
+    }
+}

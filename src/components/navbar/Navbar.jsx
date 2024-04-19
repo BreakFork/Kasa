@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/kasa-logo.svg';
-import './header.scss';
+import './navbar.scss';
 
 const Header = () => {
     return (
-        <header className = "header"> 
-            <img className="header__logo" src={logo} alt="Logo du site Kasa" />
-            <nav className="navbar">
+        <div className = "navbar-container"> 
+            <img className="navbar-container__logo" src={logo} alt="Logo du site Kasa" />
+            <nav className="navbar-container__navbar">
                 <NavLink 
                     to="/"
                     className="navbar__link"  
@@ -20,7 +20,7 @@ const Header = () => {
                     A propos
                 </NavLink>
             </nav>
-        </header>
+        </div>
     );
 };
 

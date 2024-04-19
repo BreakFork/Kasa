@@ -1,1 +1,30 @@
 @use "../../styles/main.scss";
+@use "sass:map";
+
+.gallery {
+    @include main.media-query(sm) {
+            // background-color: orange;
+            border-radius: none;
+            padding: 22px 22px 22px 22px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 22px;
+        }
+    
+        @include main.media-query(md) {
+            background-color: #F6F6F6;
+            border-radius: 25px;
+            margin: 43px 5.868% 50px 5.868%;
+            padding: 55px 55px 55px 55px;
+            gap: 55px;
+        }
+    
+        @include main.media-query(lg) {
+            // background-color: purple;
+            
+        }
+    
+        @include main.media-query(xl) {
+            // background-color: mediumaquamarine;
+        }
+    }

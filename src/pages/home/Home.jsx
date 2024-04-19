@@ -1,18 +1,24 @@
+import "./home.scss";
 import React from "react";
-import Header from "../../components/header/Header";
+import Navbar from "../../components/navbar/Navbar";
 import Banner from "../../components/banner/Banner";
 import BannerImg from "../../assets/banner-bkg.png";
+import Gallery from "../../components/gallery/Gallery";
 import Footer from "../../components/footer/Footer";
-import "./home.scss";
 
 const Home = () => {
     return (
-        
         <React.Fragment>
-        <Header />
-        <Banner imageSrc={BannerImg} title="Chez vous, partout et ailleurs" />
-
-        <Footer />
+            <div className="wrapper">
+                <header className="header">
+                    <Navbar />
+                    <Banner imageSrc={BannerImg} title="Chez vous, partout et ailleurs" />
+                </header>
+                <main className="main">
+                    <Gallery />
+                </main>
+                <Footer />
+            </div> 
         </React.Fragment>
     );
 };
