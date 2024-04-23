@@ -1,12 +1,6 @@
 @use "../../styles/main.scss";
 
-.wrapper {
-    @include main.wrapper;
-    // background-color: aqua;
-}
-
 header {
-    
     // margin: 5.868% 5.868% 0 5.868%;  /* 22px --> breakpoint: 375px */
     display: flex;
     flex-direction: column;
@@ -17,7 +11,7 @@ header {
 
     @include main.media-query(sm) {
             // background-color: orange;
-        margin: 1.25em 1.375em 0 1.375em;
+        margin: 1.25em 1.25em 0 1.25em;
         }
     @include main.media-query(md) {
         // background-color: grey;

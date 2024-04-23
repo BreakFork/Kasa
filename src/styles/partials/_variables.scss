@@ -31,7 +31,8 @@ $responsive-height: (
 
 /* COLORS */
 $colors: (
-    brand-crl: #FF6060,
+    brand-clr: #FF6060,
+    black-clr: #000000
 );
 
 /* FONT SIZES */
@@ -42,6 +43,8 @@ $font-sizes: (
     size-4: 1.500em,   /* 24px */
     size-5: 2.25em,      /* 36px */
     size-6: 3em,       /* 48px */
-    size-7: 18h,        /* 288px */
+    size-7: 16.3rem,        /* 288px */
+    size-error-404: 96px,
     size-banner-md: 1.700em,
+    size-collapse-title-about-sm: 0.8125em /* 13px */
 );

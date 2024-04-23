@@ -9,7 +9,7 @@ import Footer from "../../components/footer/Footer";
 const Home = () => {
     return (
         <React.Fragment>
-            <div className="wrapper">
+            {/* <div className="wrapper"> */}
                 <header className="header">
                     <Navbar />
                     <Banner imageSrc={BannerImg} title="Chez vous, partout et ailleurs" />
@@ -18,7 +18,7 @@ const Home = () => {
                     <Gallery />
                 </main>
                 <Footer />
-            </div> 
+            {/* </div>  */}
         </React.Fragment>
     );
 };

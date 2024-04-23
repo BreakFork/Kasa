@@ -5,22 +5,10 @@
 @import "./partials/_mixins.scss";
 
 body {
-    // @include wrapper;
     font-family: "Montserrat", sans-serif;
-    // background-color: yellow;
-        // }
-    // @include breakpoint-mobile-m {
-
-    // }
-
-    // @include breakpoint-mobile-l {
-
-    // }
-
-    // @include breakpoint-desktop {
-    //     min-width: 100%;
-    //     width: $wrapper-max-width;
-    //     background-color: yellow;
-    // }
 }
 
+.wrapper {
+    @include wrapper;
+    // background-color: aqua;
+}

@@ -1,0 +1,80 @@
+@use "../../styles/main.scss";
+@use "sass:map";
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    margin: 7.0625em 0 7.0625em 0;
+    
+    // background-color: bisque;
+
+    @include main.media-query(xl) {
+        margin: 8.688rem 0 8.688rem 0;
+    }
+
+    & > * + * {
+        margin-top: 7.0625rem;
+
+        @include main.media-query(xl) {
+            margin-top: 8.688rem;
+        }
+    }
+
+    &__type {
+        font-size: map.get(main.$font-sizes, size-error-404);
+        color: map.get(main.$colors, brand-clr);
+        font-weight: 700;
+        line-height: 100%;
+        width: 100%;
+        // max-width: 198px;
+        // height: 99px;
+        // background-color: grey;
+
+        @include main.media-query(sm) {
+            font-size: map.get(main.$font-sizes, size-error-404);
+        }
+
+        @include main.media-query(xl) {
+            font-size: map.get(main.$font-sizes, size-7);
+            // max-width: 198px;
+            // height: 263px;
+        }
+    }
+
+    &__message {
+        font-size: map.get(main.$font-sizes, size-3);
+        color: map.get(main.$colors, brand-clr);
+        line-height: 146%;
+
+        width: 100%;
+        max-width: 230px;
+        height: 52px;
+        // background-color: azure;
+
+        @include main.media-query(xl) {
+            font-size: map.get(main.$font-sizes, size-5);
+            max-width: 100%;
+        }
+    }
+
+    &__link {
+        color: map.get(main.$colors, black-clr);
+        text-decoration: underline;
+        line-height: 146%;
+        // background-color: azure;
+
+        @include main.media-query(sm) {
+            font-size: map.get(main.$font-sizes, size-2);
+        }
+
+        @include main.media-query(xl) {
+            font-size: map.get(main.$font-sizes, size-3);
+        }
+    }
+}

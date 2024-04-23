@@ -8,5 +8,5 @@
         @error 'Missing argument: `$px`.';
     }
 
-    @return math.div($px, 16)+rem;
+    @return math.div($px, 16)+em;
 };

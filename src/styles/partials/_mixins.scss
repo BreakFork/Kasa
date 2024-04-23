@@ -3,7 +3,6 @@
 
 /* main wrapper */
 @mixin wrapper {
-    // margin: auto;
     margin-left: auto;
     margin-right: auto;
     min-width: $wrapper-min-width;
@@ -22,8 +21,8 @@
 }
 
 @mixin banner-bridge-query {
-    @media screen and (min-width: 388px) and (max-width: 423px) {
-        width: 68%;
+    @media screen and (min-width: 375px) and (max-width: 423px) {
+        width: 75%;
         font-size: map-get($font-sizes, size-banner-md);
         // background-color: grey;
     }

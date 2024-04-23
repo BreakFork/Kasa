@@ -1,1 +1,20 @@
 @use "../../styles/main.scss";
+
+.main.about-page {
+    // background-color: orange;
+    display: flex;
+    flex-direction: column;
+
+    @include main.media-query(sm) {
+        padding: 1.1875em 5.868% 0px 5.868%;
+    }
+
+    @include main.media-query(md) {
+        padding: 2.375rem 5.868% 0px 5.868%;
+    }
+
+    @include main.media-query(lg) {
+        padding: 0 5.868% 0 5.868%;
+    }
+    
+}
