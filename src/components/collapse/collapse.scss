@@ -2,7 +2,6 @@
 @use "sass:map";
 
 .collapse > * + * {
-    // background-color: grey;
     margin-bottom: 1.188rem;
 
     @include main.media-query(md) {
@@ -11,6 +10,9 @@
 }
 
 .collapse__header {
+    position: relative;
+    top: auto;
+    left: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -31,12 +33,16 @@
             font-size: map.get(main.$font-sizes, size-3);
             height: 3.25em;
         }
+
+        @include main.media-query(lg) {
+            font-size: map.get(main.$font-sizes, size-2);
+            height: 52px;
+        }
     }
 
     &--btn {
         margin-right: 20px;
         background-color: transparent;
-        // background-color: grey;
         border: none;
         cursor: pointer;
 
@@ -44,14 +50,12 @@
             width: 32px;
             height: 1.875rem;
             margin-right: 10px;
-            // background-color: grey;
         }
 
         @include main.media-query(md) {
             width: 80px;
             height: 40px;
             margin-right: 5px;
-            // background-color: grey;
         }
     
         & svg {
@@ -61,7 +65,6 @@
             padding: auto;
             transition: -webkit-transform 0.4s ease;
             transition: transform 0.4s ease;
-            // background-color: bisque;
 
             @include main.media-query(sm) {
                 width: 30px;
@@ -77,34 +80,52 @@
 }
 
 .collapse__view--wrapper {
-    height: inherit;
+    z-index: -2;
+    position: relative;
+    top: -10px;
+    left: 0;
     width: inherit;
-    border-radius: 5px;
-    background-color:rgba(246, 246, 246, .5);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color:rgba(246, 246, 246, .45);
 
-    &-content {
-        color: map.get(main.$colors, black-clr);
-        padding: 20px 0 20px 20px;
-        line-height: 142.6%;
-        text-align: justify;
-        word-spacing: -0.025rem;
-        white-space-collapse: break-spaces;
-        word-break: keep-all;
-        line-break: strict;
-
-        & {
-            @include main.media-query(sm) {
-                font-size: map.get(main.$font-sizes, size-1);
-                padding: 20px;
-            }
-
-            @include main.media-query(md) {
-                font-size: map.get(main.$font-sizes, size-3);
-                width: 50%;
-                padding: 20px 0 20px 20px;
-            }
-        }
+    @include main.media-query(md) {
+        padding: 20px 20px 20px 20px;
     }
+
+    @include main.media-query(lg) {
+        padding: 20px;
+    }
+}
+
+.collapse__view—wrapper-content {
+    color: map.get(main.$colors, black-clr);
+    line-height: 142.6%;
+    text-align: justify;
+    word-spacing: -0.025rem;
+    white-space-collapse: break-spaces;
+    word-break: keep-all;
+    line-break: strict;
+    padding: 23px 20px 15px 20px;
+
+    @include main.media-query(sm) {
+        font-size: map.get(main.$font-sizes, size-1);
+    }
+
+    @include main.media-query(md) {
+        font-size: map.get(main.$font-sizes, size-3);
+        width: 100%;
+    }
+
+    @include main.media-query(lg) {
+        font-size: map.get(main.$font-sizes, size-3);
+    }
+}
+
+.viewer-hidden {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 .rotate {

@@ -1,0 +1,46 @@
+@use "../../styles/main.scss";
+@use "sass:map";
+
+.housing-title__title {
+    color: map.get(main.$colors, brand-clr);
+    font-weight: normal;
+    line-height: 142.6%;
+
+    @include main.media-query(sm) {
+        font-size: map.get(main.$font-sizes, size-3);
+    }
+    @include main.media-query(md) {
+        font-size: map.get(main.$font-sizes, size-4);
+        margin-top: 13px;
+    }
+    @include main.media-query(lg) {
+        font-size: map.get(main.$font-sizes, size-5);
+        margin-top: 15px;
+        
+    }
+}
+
+.housing-title__location {
+    color: map.get(main.$colors, black-clr);
+    font-weight: normal;
+    line-height: 142.6%;
+
+    @include main.media-query(sm) {
+        font-size: map.get(main.$font-sizes, size-2);
+    }
+
+    @include main.media-query(md) {
+        font-size: map.get(main.$font-sizes, size-3);
+    }
+
+    @include main.media-query(lg) {
+        font-size: map.get(main.$font-sizes, size-3);
+    }
+
+}
+
+.housing__references {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

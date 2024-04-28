@@ -1,7 +1,6 @@
 @use "../../styles/main.scss";
 
 .main.about-page {
-    // background-color: orange;
     display: flex;
     flex-direction: column;
 
@@ -15,6 +14,9 @@
 
     @include main.media-query(lg) {
         padding: 0 5.868% 0 5.868%;
-    }
-    
+
+        & .collapse__view—wrapper-content>li {
+            width: 50%;
+        }
+    } 
 }

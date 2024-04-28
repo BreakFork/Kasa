@@ -1,0 +1,28 @@
+@use "../../styles/main.scss";
+@use "sass:map";
+
+.housing__references-name {
+    width: 93px;
+    height: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+
+    @include main.media-query(lg) {
+        height: 52px;
+    }
+}   
+
+.housing__references--first-name, .housing__references--last-name {
+    color: map.get(main.$colors, brand-clr);
+    font-size: map.get(main.$font-sizes, size-1);
+
+    @include main.media-query(md) {
+            font-size: map.get(main.$font-sizes, size-2);
+        }
+
+    @include main.media-query(lg) {
+        font-size: map.get(main.$font-sizes, size-3);
+    }
+}

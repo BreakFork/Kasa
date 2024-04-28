@@ -18,11 +18,11 @@ const About = () => {
             <main className="main about-page">
                 {Data.map((item) => {
                     return (
-                        <Fragment key={item.id}>
+                        <Fragment className="lg-width" key={item.id}>
                             <Collapse id={item.id} title={item.title} content={item.content} />
                         </Fragment>
                     );
-                })}
+                })};
             </main>
             <Footer />
         </React.Fragment>

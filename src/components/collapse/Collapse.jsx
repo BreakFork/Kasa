@@ -1,34 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./collapse.scss";
 
-const Collapse = ({id, title, content}) => {
-    // HOOK
-    const [isActive, setIsActive] = useState('');
+const Collapse = ({ id, title, content }) => {
+    // HOOKS
+    const [isActive, setIsActive] = useState(false);
     const [ariaIsExpanded, setAriaIsExpanded] = useState(false);
     const [rotateCssClass, setRotateCssClass] = useState('svg');
+    const [viewerHiddenCssClass, setViewerHiddenCssClass] = useState(' viewer-hidden');
 
+    const formatedContent = [];
+    const formatedData = useRef(null);                      //console.log("USEREF : " + formatedData.current);
 
-    const handleClick = () => {
-        setIsActive(isActive === '' ? 'active' : '');
-        setAriaIsExpanded(ariaIsExpanded => !ariaIsExpanded);
-        setRotateCssClass(isActive === 'active' ? 'svg' : 'svg rotate')
+    // FORMATED CONTENT FOR FORMATED DATA (useRef)
+    if (!Array.isArray(content)) {
+        formatedContent.push(content);                      //console.log("FORMATED CONTENT TEXT : " + formatedData.current);
+        formatedData.current = formatedContent[0];
+    } else {
+        for (let i = 0; i < content.length; i++) {
+            formatedContent.push(content[i]);
+            //formatedData.current = formatedContent;       //console.log("FORMATED CONTENT LIST : " + formatedContent);
+        }
     }
 
+    // COLLAPSE BUTTON ACTIONS
+    const handleClick = () => {
+        setIsActive(isActive => !isActive);
+        setAriaIsExpanded(ariaIsExpanded => !ariaIsExpanded);
+        setRotateCssClass(isActive === true ? 'svg' : 'svg rotate');
+        setViewerHiddenCssClass(isActive === true ? 'viewer-hidden' : 'collapse__view--wrapper')
+    }
+
+    // COLLAPSE TEMPLATES ///////////////////////////////////////////////////////
+    // TEXT TEMPLATE
+    const CollapseTextTemplate = ({ formatedData }) => {    //console.log("TEXT TEMPLATE : " + formatedData.current)
+        return (
+            <p ref={formatedData}  id={`${id}-${title}`} role="region" aria-labelledby={`${id}-${title}`} className="collapse__view—wrapper-content">
+                {formatedData.current} 
+            </p>
+        );
+    };
+
+    // LIST TEMPLATE
+    const CollapseListTemplate = () => {                    //console.log("LIST TEMPLATE : " + formatedData.current)
+        return (
+            <ul id={`${id}-${title}`} role="region" aria-labelledby={`${id}-${title}`} className="collapse__view—wrapper-content">
+                { formatedContent.map((equipment, index) =>
+                    <li key={`${equipment}-${index}`}>{equipment}</li>
+                )}
+            </ul>
+        );
+    };
+    /////////////////////////////////////////////////////////////////////////////
     return (
         <article className="collapse">
             <header className="collapse__header">
                 <h2 className="collapse__header--title">{title}</h2>
-                <button 
+                <button
                     className="collapse__header--btn"
                     type="button"
-                    // eslint-disable-next-line
+                    // next line --> only because eslint attempts a string "true" or "false"  neither 0 || 1 (for terminal purpose)
+                    // eslint-disable-next-line 
                     aria-expanded={`${ariaIsExpanded}`}
-                    aria-owns={`${id}${title}`}
-                    id={`${id}${title}`}
-                    focusable="true" 
+                    aria-owns={`${id}-${title}`}
+                    id={`${id}-${title}`}
+                    focusable="true"
                     onClick={handleClick}>
-                    <svg className={`${rotateCssClass}`} 
-                        aria-hidden="true" 
+                    <svg className={`${rotateCssClass}`}
+                        role="presentation"
+                        aria-hidden="true"
                         focusable="false" alt=""
                         viewBox="0 1 33 31"
                         xmlns="http://www.w3.org/2000/svg">
@@ -37,8 +76,11 @@ const Collapse = ({id, title, content}) => {
                 </button>
             </header>
             <section className="collapse__view">
-                <div className="collapse__view--wrapper">
-                    {isActive && <p id={`${id}${title}`} role="region" aria-labelledby={`${id}${title}`} className="collapse__view--wrapper-content">{content}</p>}
+                <div  className={`${viewerHiddenCssClass}`} role="presentation">
+                    {
+                        isActive && !title == "Équipements" ? <CollapseTextTemplate formatedData={formatedData} />       //+ console.log("CHILD STRING : " + formatedData.current)
+                                                            : <CollapseListTemplate />       //+ console.log("CHILD ARRAY : " + formatedContent)
+                    }
                 </div>
             </section>
         </article>

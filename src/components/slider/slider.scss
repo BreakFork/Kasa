@@ -1,0 +1,110 @@
+@use "../../styles/main.scss";
+@use "sass:map";
+
+.carrousel {
+    width: 100%;
+    position: relative;
+    top: auto;
+    left: auto;
+    min-height: 255px;
+    max-height: 255px;
+    border-radius: 10px;
+
+    &__list--item-img {
+        border-radius: 10px;
+        min-height: 255px;
+        max-height: 255px;
+    }
+
+    &__index {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        left: 0;
+        font-size: map.get(main.$font-sizes, size-3);
+        text-align: center;
+        color: white;
+    }
+    
+    @include main.media-query(sm) {
+        &__index {
+            display: none;
+        }
+    }
+
+    @include main.media-query(md) {
+        min-height: 315px;
+        max-height: 315px;
+
+        &__list--item-img {
+            border-radius: 25px;
+            min-height: 315px;
+            max-height: 315px;
+        }
+
+        &__index {
+            display: block;
+        }
+    }
+    
+    @include main.media-query(lg) {
+        min-height: 415px;
+        max-height: 415px;
+
+        &__list--item-img {
+            border-radius: 25px;
+            min-height: 415px;
+            max-height: 415px;
+        }
+    
+        &__index {
+            bottom: 20px;
+        }
+    }
+}
+
+.carroussel__button-left, .carroussel__button-right {
+    all: unset;
+    position: absolute;
+    height: 100%;
+    width: 24px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
+
+    @include main.media-query(md) {
+        width: 34px;
+
+        & img {
+            width: 28px;
+            height: 49px;
+        }
+    }
+
+    @include main.media-query(lg) {
+        width: 46px;
+
+        & img {
+            width: 46px;
+           height: 79px;
+        }
+    }
+}
+
+.carroussel__button-left {
+    left: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 3px;
+}
+
+.carroussel__button-right {
+    right: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-right: 3px;
+}

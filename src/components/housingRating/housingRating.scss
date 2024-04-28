@@ -1,0 +1,40 @@
+@use "../../styles/main.scss";
+
+.housing__references--rating-list {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+
+    @include main.media-query(sm) {
+        max-width: 98px;
+        max-height: 18px;
+
+        &-item {
+            min-width: 18px;
+            min-height: 18px;
+        }
+    }
+
+    @include main.media-query(sm) {
+        min-width: 130px;
+        min-height: 30px;
+
+        &-item {
+            min-width: 22px;
+            min-height: 22px;
+        }
+    }
+
+    @include main.media-query(lg) {
+        justify-content: space-end;
+        min-width: 166px;
+        min-height: 36px;
+
+        &-item {
+            min-width: 25px;
+            min-height: 25px;
+
+        }
+    }
+}
