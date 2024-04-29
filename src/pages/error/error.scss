@@ -1,3 +1,50 @@
 @use "../../styles/main.scss";
 
-//                            
+.main.error-page {
+    @include main.media-query(sm) {
+        padding-top: 113px;
+        padding-bottom: 113px;
+
+        & .error__message-wrapper-md {
+            display: none;
+        }
+    }
+
+    @include main.media-query(sm) {
+        padding-top: 113px;
+        padding-bottom: 113px;
+    }
+
+    @include main.media-query(md) {
+        padding-top: 125px;
+        padding-bottom: 125px;
+    }
+
+    @include main.media-query(lg) {
+        padding-top: 139px;
+        padding-bottom: 139px;
+
+        & .error__message-wrapper-md {
+            display: inline-block;
+        }
+
+        & .error__message-wrapper-sm {
+            display: none;
+        }
+    }
+
+    @include main.media-query(xl) {
+        padding-top: 139px;
+        padding-bottom: 139px;
+
+        & .error__message-wrapper-md {
+            display: inline-block;
+        }
+
+         & .error__message-wrapper-sm {
+             display: none;
+         }
+    }
+
+}                          
+

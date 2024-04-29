@@ -4,26 +4,15 @@
 .error {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
-
-    min-width: 100%;
-    min-height: 100%;
-
-    margin: 7.0625em 0 7.0625em 0;
-    
+    min-height: 496px;
     // background-color: bisque;
 
     @include main.media-query(xl) {
-        margin: 8.688rem 0 8.688rem 0;
-    }
-
-    & > * + * {
-        margin-top: 7.0625rem;
-
-        @include main.media-query(xl) {
-            margin-top: 8.688rem;
-        }
+        min-height: 618px;
+        // background-color: bisque;
     }
 
     &__type {
@@ -32,30 +21,41 @@
         font-weight: 700;
         line-height: 100%;
         width: 100%;
-        // max-width: 198px;
-        // height: 99px;
         // background-color: grey;
 
         @include main.media-query(sm) {
             font-size: map.get(main.$font-sizes, size-error-404);
         }
 
+        @include main.media-query(md) {
+            font-size: map.get(main.$font-sizes, size-error-404-md);
+        }
+
         @include main.media-query(xl) {
             font-size: map.get(main.$font-sizes, size-7);
-            // max-width: 198px;
-            // height: 263px;
         }
     }
 
     &__message {
         font-size: map.get(main.$font-sizes, size-3);
         color: map.get(main.$colors, brand-clr);
-        line-height: 146%;
-
+        line-height: 110%;
         width: 100%;
-        max-width: 230px;
-        height: 52px;
         // background-color: azure;
+
+        &-wrapper-sm {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        &-wrapper-sm>span:first-child {
+            margin-bottom: -15px;
+        }
+
+        @include main.media-query(md) {
+            font-size: map.get(main.$font-sizes, size-4);
+            max-width: 100%;
+        }
 
         @include main.media-query(xl) {
             font-size: map.get(main.$font-sizes, size-5);

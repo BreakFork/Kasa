@@ -30,8 +30,8 @@ const Housing = () => {
     
     if (housing) {
         return (
-            <div class="wrapper">
             <Fragment>
+            <div className="wrapper">
                 <Header hidden="" bannerImg bannerTitle />
                 <main className="main housing-page">
                     <Slider btnLeft={SliderArrowLeft} btnRight={SliderArrowRight} pictures={housing.pictures} />
@@ -54,8 +54,8 @@ const Housing = () => {
                     </section>
                 </main>
                 <Footer />
-            </Fragment>
             </div>
+            </Fragment>
         )
     } else {
         return <Error />;

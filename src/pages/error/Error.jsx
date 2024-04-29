@@ -6,17 +6,15 @@ import "./error.scss";
 
 const Error = () => {
     return (
-        <div class="wrapper">
         <React.Fragment>
             <div className="wrapper">
                 <Header hidden="" bannerImg bannerTitle />
-                <main className="main error-page">
-                    <ErrorNotFound />
-                </main>
+                    <main className="main error-page">
+                        <ErrorNotFound />
+                    </main>
+                <Footer />
             </div>
-            <Footer />
         </React.Fragment>
-        </div>
     );
 };
 

@@ -6,15 +6,16 @@ import Footer from "../../components/footer/Footer";
 
 const Home = () => {
     return (
-        <div class="wrapper">
+        
         <React.Fragment>
+            <div className="wrapper">
                 <Header hidden bannerImg bannerTitle="generic" />
                 <main className="main">
                     <Gallery />
                 </main>
                 <Footer />
+            </div>
         </React.Fragment>
-        </div>
     );
 };
 
