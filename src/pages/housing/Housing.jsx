@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { useDataHandler } from "../../data/useDataHandler.jsx";
 import Error from "../error/Error";
-import Header from "../../components/navbar/Navbar";
+import Header from "../../components/header/Header";
 import SliderArrowLeft from "../../assets/slider-arrow-left.svg";
 import SliderArrowRight from "../../assets/slider-arrow-right.svg";
 import Slider from "../../components/slider/Slider";
@@ -21,8 +21,6 @@ const Housing = () => {
     // DATA
     const housings = useDataHandler(window.location.origin + '/data.json');    //console.log(housings);
     const { id } = useParams();                                                //console.log("HOUSING ID : " + id);   
-    
-    // if (housings.error) { return <Error /> };
 
     let housing;
 
@@ -31,14 +29,9 @@ const Housing = () => {
     } 
     
     if (housing) {
-    //     return <Error />;
-    // } else {
-        // const [firstName, lastName] = housing.host.name.split(' ');
         return (
             <Fragment>
-                <header className="header">
-                    <Header />
-                </header>
+                <Header hidden="" bannerImg bannerTitle />
                 <main className="main housing-page">
                     <Slider btnLeft={SliderArrowLeft} btnRight={SliderArrowRight} pictures={housing.pictures} />
                     <div className="housing__wrapper" role={"presentation".toString()}>

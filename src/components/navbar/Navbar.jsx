@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import logo from '../../assets/kasa-logo.svg';
 import './navbar.scss';
 
-const Header = () => {
+const Navbar = () => {
     return (
         <div className = "navbar-container"> 
             <img className="navbar-container__logo" src={logo} alt="Logo du site Kasa" />
@@ -24,4 +24,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;
