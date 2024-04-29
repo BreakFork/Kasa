@@ -30,6 +30,7 @@ const Housing = () => {
     
     if (housing) {
         return (
+            <div class="wrapper">
             <Fragment>
                 <Header hidden="" bannerImg bannerTitle />
                 <main className="main housing-page">
@@ -54,6 +55,7 @@ const Housing = () => {
                 </main>
                 <Footer />
             </Fragment>
+            </div>
         )
     } else {
         return <Error />;

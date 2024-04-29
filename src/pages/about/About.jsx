@@ -8,6 +8,7 @@ import "./about.scss";
 
 const About = () => {
     return (
+        <div class="wrapper">
         <React.Fragment>
             <Header hidden bannerImg="aboutPage" bannerTitle />
             <main className="main about-page">
@@ -21,6 +22,7 @@ const About = () => {
             </main>
             <Footer />
         </React.Fragment>
+        </div>
     );
 };
 

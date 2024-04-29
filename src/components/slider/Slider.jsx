@@ -39,7 +39,7 @@ const Slider = ({btnLeft, btnRight, pictures}) => {
             </ul> 
 
             { currentPosition !== 0 ? <PreviousButton icon={ btnLeft } /> : null } 
-            {currentPosition !== pictures.length - 1 ? <NextButton icon={btnRight} /> : null }
+            { currentPosition !== pictures.length - 1 ? <NextButton icon={btnRight} /> : null }
             
             <span className="carrousel__index"> { currentPosition }/{ pictures.length - 1 } </span>   
         </section>

@@ -6,6 +6,7 @@ import "./error.scss";
 
 const Error = () => {
     return (
+        <div class="wrapper">
         <React.Fragment>
             <div className="wrapper">
                 <Header hidden="" bannerImg bannerTitle />
@@ -14,7 +15,8 @@ const Error = () => {
                 </main>
             </div>
             <Footer />
-        </React.Fragment> 
+        </React.Fragment>
+        </div>
     );
 };
 
