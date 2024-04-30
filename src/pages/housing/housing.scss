@@ -44,7 +44,6 @@
 .housing__references {
     display: flex;
     align-items: center;
-    // margin-top: 6px;
     margin-bottom: 6px;
 
     @include main.media-query(md) {
