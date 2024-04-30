@@ -44,10 +44,12 @@
 .housing__references {
     display: flex;
     align-items: center;
+    // margin-top: 6px;
     margin-bottom: 6px;
 
     @include main.media-query(md) {
         font-size: map.get(main.$font-sizes, size-3);
+        margin-top: 6px;
     }
 
     @include main.media-query(lg) {
@@ -56,6 +58,8 @@
         align-items: end;
         min-height: 133px;
         height: 100%;
+        padding-top: 25px;
+        padding-bottom: 18px;
     }
 }
 
