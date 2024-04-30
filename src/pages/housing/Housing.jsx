@@ -19,8 +19,8 @@ import "./housing.scss";
 
 const Housing = () => {
     // DATA
-    const housings = useDataHandler(window.location.origin + '/data.json');    //console.log(housings);
-    const { id } = useParams();                                                //console.log("HOUSING ID : " + id);   
+    const housings = useDataHandler(window.location.origin + '/data.json');    console.log(housings);
+    const { id } = useParams();                                                console.log("HOUSING ID : " + id);   
 
     let housing;
 

@@ -8,11 +8,9 @@
     align-items: center;
     text-align: center;
     min-height: 496px;
-    // background-color: bisque;
 
     @include main.media-query(xl) {
         min-height: 618px;
-        // background-color: bisque;
     }
 
     &__type {
@@ -21,7 +19,6 @@
         font-weight: 700;
         line-height: 100%;
         width: 100%;
-        // background-color: grey;
 
         @include main.media-query(sm) {
             font-size: map.get(main.$font-sizes, size-error-404);
@@ -41,7 +38,6 @@
         color: map.get(main.$colors, brand-clr);
         line-height: 110%;
         width: 100%;
-        // background-color: azure;
 
         &-wrapper-sm {
             display: flex;
@@ -67,7 +63,6 @@
         color: map.get(main.$colors, black-clr);
         text-decoration: underline;
         line-height: 146%;
-        // background-color: azure;
 
         @include main.media-query(sm) {
             font-size: map.get(main.$font-sizes, size-2);

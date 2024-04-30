@@ -14,7 +14,6 @@
                 align-items: center;
                 justify-content: center;
                 min-width: 110px;
-                max-width: 110px;
                 min-height: 18px;
                 max-height: 18px;
                 font-size: 10px;
@@ -24,6 +23,7 @@
                 color: white;
                 background-color: map.get(main.$colors, brand-clr);
                 border-radius: 5px;
+                padding-inline: 6px;
             }
         }
 
@@ -31,24 +31,21 @@
         margin-top: 20px;
         
         &-item {
-            min-width: 120px;
-            max-width: 120px;
             min-height: 23px;
             max-height: 23px;
-            font-size: map.get(main.$font-sizes, size-2);
+            font-size: map.get(main.$font-sizes, size-1);
             text-align: center;
             line-height: 142.6%;
             font-weight: bold;
             color: white;
             background-color: map.get(main.$colors, brand-clr);
             border-radius: 10px;
+            padding-inline: 8px;
         }
     }
 
         @include main.media-query(lg) {
             &-item {
-                min-width: 130px;
-                max-width: 130px;
                 min-height: 24px;
                 max-height: 24px;
             }
@@ -56,8 +53,6 @@
 
         @include main.media-query(xl) {
             &-item {
-                min-width: 150px;
-                max-width: 150px;
                 min-height: 25px;
                 max-height: 25px;
             }
