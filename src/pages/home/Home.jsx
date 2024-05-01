@@ -1,22 +1,23 @@
 import "./home.scss";
-import React from "react";
+import { Fragment } from "react";
 import Header from "../../components/header/Header";
+import BannerImg from "../../assets/banner-bkg.png";
 import Gallery from "../../components/gallery/Gallery";
 import Footer from "../../components/footer/Footer";
 
 const Home = () => {
+
     return (
-        
-        <React.Fragment>
+        <Fragment>
             <div className="wrapper">
-                <Header hidden bannerImg bannerTitle="generic" />
+                <Header bannerIsVisible bannerImg={BannerImg} bannerTitle="generic" />
                 <main className="main">
                     <Gallery />
                 </main>
                 <Footer />
             </div>
-        </React.Fragment>
-    );
+        </Fragment>
+    )
 };
 
 export default Home;

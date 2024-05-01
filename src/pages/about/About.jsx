@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import React from "react";
+import BannerImg from "../../assets/about.png";
 import Header from "../../components/header/Header";
 import Collapse from "../../components/collapse/Collapse";
 import Data from "../../data/about.json";
@@ -10,7 +11,7 @@ const About = () => {
     return (
         <React.Fragment>
             <div className="wrapper">
-                <Header hidden bannerImg="aboutPage" bannerTitle />
+                <Header bannerIsVisible bannerImg={BannerImg} bannerTitle />  
                 <main className="main about-page">
                     {Data.map((item) => {
                         return (

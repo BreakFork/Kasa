@@ -5,18 +5,16 @@ import './navbar.scss';
 const Navbar = () => {
     return (
         <div className = "navbar-container"> 
-            <img className="navbar-container__logo" src={logo} alt="Logo du site Kasa" />
+            <h1>
+                <NavLink to="/">
+                    <img className="navbar-container__logo" src={logo} alt="Logo de Kasa" />
+                </NavLink>
+            </h1>
             <nav className="navbar-container__navbar">
-                <NavLink 
-                    to="/"
-                    className="navbar__link"  
-                >
+                <NavLink to="/" className="navbar__link">
                     Accueil
                 </NavLink>
-                <NavLink 
-                    to="/about"
-                    className="navbar__link"
-                >
+                <NavLink to="/about" className="navbar__link">
                     A propos
                 </NavLink>
             </nav>

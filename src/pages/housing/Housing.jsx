@@ -32,7 +32,7 @@ const Housing = () => {
         return (
             <Fragment>
             <div className="wrapper">
-                <Header hidden="" bannerImg bannerTitle />
+                    <Header bannerIsVisible="" bannerImg bannerTitle />
                 <main className="main housing-page">
                     <Slider btnLeft={SliderArrowLeft} btnRight={SliderArrowRight} pictures={housing.pictures} />
                     <div className="housing__wrapper" role={"presentation".toString()}>

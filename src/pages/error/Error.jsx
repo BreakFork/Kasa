@@ -8,7 +8,7 @@ const Error = () => {
     return (
         <React.Fragment>
             <div className="wrapper">
-                <Header hidden="" bannerImg bannerTitle />
+                <Header bannerIsVisible="" bannerImg bannerTitle />
                     <main className="main error-page">
                         <ErrorNotFound />
                     </main>
