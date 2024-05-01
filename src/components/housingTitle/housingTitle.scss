@@ -8,6 +8,7 @@
 
     @include main.media-query(sm) {
         font-size: map.get(main.$font-sizes, size-3);
+        max-width: 80%;
     }
     @include main.media-query(md) {
         font-size: map.get(main.$font-sizes, size-4);
@@ -16,7 +17,9 @@
     @include main.media-query(lg) {
         font-size: map.get(main.$font-sizes, size-5);
         margin-top: 15px;
-        
+    }
+    @include main.media-query(lg) {
+        max-width: 100%;
     }
 }
 
@@ -43,4 +46,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+        
+    @include main.media-query(lg) {
+        margin-left: 150px;
+    }
 }
