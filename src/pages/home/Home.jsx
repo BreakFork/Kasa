@@ -1,4 +1,3 @@
-import "./home.scss";
 import { Fragment } from "react";
 import Header from "../../components/header/Header";
 import BannerImg from "../../assets/banner-bkg.png";

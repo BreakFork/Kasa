@@ -5,31 +5,23 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
-    // gap: 27px;
-    // background-color: orange;
 
     @include main.media-query(sm) {
-        // background-color: orange;
         margin: 1.25em 1.25em 0 1.25em;
         gap: 15px;
     }
 
     @include main.media-query(md) {
-        // background-color: grey;
         margin: 45px 5.868% 0 5.868%;
         gap: 40px;
     }
 
     @include main.media-query(lg) {
-        // background-color: purple;
         margin: 45px 5.868% 0px 5.868%;
         gap: 45px;
     }
 
     @include main.media-query(xl) {
         gap: 50px;
-        // background-color: mediumaquamarine;
-        // margin: 45px 5.868% 50px 5.868%;
     }
 }

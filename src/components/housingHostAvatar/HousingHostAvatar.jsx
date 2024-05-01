@@ -1,4 +1,3 @@
-// import { Fragment } from "react";
 import "./housingHostAvatar.scss";
 
 const HousingHostAvatar = ({ picture }) => {

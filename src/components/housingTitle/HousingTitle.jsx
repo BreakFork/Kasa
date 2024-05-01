@@ -1,4 +1,3 @@
-// import { Fragment } from "react";
 import "./housingTitle.scss";
 
 const HousingTitle = ({title, location}) => {

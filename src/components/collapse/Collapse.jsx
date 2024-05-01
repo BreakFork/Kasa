@@ -77,8 +77,8 @@ const Collapse = ({ id, title, content }) => {
             <section className="collapse__view">
                 <div  className={`${viewerHiddenCssClass}`} role="presentation">
                     {
-                        isActive && title == "Équipements" ? <CollapseListTemplate />                                   //+ console.log("CHILD ARRAY : " + formatedContent)
-                                                           : <CollapseTextTemplate formatedData={formatedData} />       //+ console.log("CHILD STRING : " + formatedData.current)
+                        isActive && title === "Équipements" ? <CollapseListTemplate />                                   //+ console.log("CHILD ARRAY : " + formatedContent)
+                                                            : <CollapseTextTemplate formatedData={formatedData} />       //+ console.log("CHILD STRING : " + formatedData.current)
                     }
                 </div>
             </section>

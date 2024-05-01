@@ -24,7 +24,6 @@
     margin: 0;
     background-color: grey;
     background-color: map.get(main.$colors, brand-clr);
-    // width: 50%;
 
     & {
         @include main.media-query(sm) {
@@ -119,7 +118,6 @@
     @include main.media-query(md) {
         font-size: map.get(main.$font-sizes, size-3);
         width: 100%;
-        // word-spacing: -0.050rem;
     }
 
     @include main.media-query(lg) {

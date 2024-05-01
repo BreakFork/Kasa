@@ -10,12 +10,12 @@ const HousingRating = ({ rating, starActive, starUnactive }) => {
         // console.log({rating})
         <Fragment>
             <ul className="housing__references--rating-list">
-                {[...Array(activeItems)].map((element, index) => (
+                {[...Array(activeItems)].map((e, index) => (
                     <li key={'active-' + index} className="housing__references--rating-list-item">
                         <img src={starActive} alt="Etoiles actives" />
                     </li>
                 ))}
-                {[...Array(unactiveItems)].map((element, index) => (
+                {[...Array(unactiveItems)].map((e, index) => (
                     <li key={'unactive-' + index} className="housing__references--rating-list-item">
                         <img src={starUnactive} alt="Etoiles non actives" />
                     </li>
