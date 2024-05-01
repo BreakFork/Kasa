@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
-import { useDataHandler } from "../../data/useDataHandler.jsx";
+import Data from "../../data/data.json";
 import Error from "../error/Error";
 import Header from "../../components/header/Header";
 import SliderArrowLeft from "../../assets/slider-arrow-left.svg";
@@ -18,48 +18,41 @@ import Footer from "../../components/footer/Footer";
 import "./housing.scss";
 
 const Housing = () => {
-    // DATA
-    const housings = useDataHandler(window.location.origin + '/data.json');    console.log(housings);
-    const { id } = useParams();                                                console.log("HOUSING ID : " + id);   
+    // DATA 
+    const { id } = useParams();                     //console.log("USEPARAM : " + id);   
+    const housing = Data.find((e) => e.id === id);  //console.log("TEST : " + housing.pictures[2])
 
-    let housing;
-
-    if (housings.dataFetched) {
-        housing = housings.dataFetched.find((housing) => housing.id === id);   //console.log(housing);
-    } 
-    
-    if (housing) {
-        return (
-            <Fragment>
-            <div className="wrapper">
-                    <Header bannerIsVisible="" bannerImg bannerTitle />
-                <main className="main housing-page">
-                    <Slider btnLeft={SliderArrowLeft} btnRight={SliderArrowRight} pictures={housing.pictures} />
-                    <div className="housing__wrapper" role={"presentation".toString()}>
-                        <div className="housing__title--wrapper" role={"presentation".toString()}>
-                            <HousingTitle title={housing.title} location={housing.location} />
-                            <HousingTags tags={housing.tags} />
-                        </div>
-                        <section className="housing__references"> 
-                            <HousingRating rating={housing.rating} starActive={StarActive} starUnactive={StarUnactive} />
-                            <div className="housing__references--host-wrapper" role={"presentation".toString()}>
-                                <HousingHostName hostName={housing.host.name} />
-                                <HousingHostAvatar picture={housing.host.picture} />
-                            </div>
-                        </section>
+    return (
+        housing ? 
+        <Fragment>
+        <div className="wrapper">
+                <Header bannerIsVisible="" bannerImg bannerTitle />
+            <main className="main housing-page">
+                <Slider btnLeft={SliderArrowLeft} btnRight={SliderArrowRight} pictures={housing.pictures} />
+                <div className="housing__wrapper" role={"presentation".toString()}>
+                    <div className="housing__title--wrapper" role={"presentation".toString()}>
+                        <HousingTitle title={housing.title} location={housing.location} />
+                        <HousingTags tags={housing.tags} />
                     </div>
-                    <section className="housing__collapse">
-                        <Collapse id={housing.id} title="Description" content={housing.description} />
-                        <Collapse id={housing.id} title="Équipements" content={housing.equipments} />
+                    <section className="housing__references"> 
+                        <HousingRating rating={housing.rating} starActive={StarActive} starUnactive={StarUnactive} />
+                        <div className="housing__references--host-wrapper" role={"presentation".toString()}>
+                            <HousingHostName hostName={housing.host.name} />
+                            <HousingHostAvatar picture={housing.host.picture} />
+                        </div>
                     </section>
-                </main>
-                <Footer />
-            </div>
-            </Fragment>
-        )
-    } else {
-        return <Error />;
-    };
+                </div>
+                <section className="housing__collapse">
+                    <Collapse id={housing.id} title="Description" content={housing.description} />
+                    <Collapse id={housing.id} title="Équipements" content={housing.equipments} />
+                </section>
+            </main>
+            <Footer />
+        </div>
+        </Fragment> 
+        :
+        <Error />
+    )
 };
 
 export default Housing;

@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <Fragment>
-            <div className="wrapper">
+            <div className="wrapper" role="presentation">
                 <Header bannerIsVisible bannerImg={BannerImg} bannerTitle="generic" />
                 <main className="main">
                     <Gallery />
