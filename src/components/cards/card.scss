@@ -18,7 +18,7 @@
         // width: 20.938rem;   /* 335px */
         width: 100%;
         // height: 15.938rem;  /* 255px */
-        height: auto;
+        height: 280px;
     }
 
     @include main.media-query(md) {
@@ -38,6 +38,7 @@
     &__img {
         min-width: 100%;
         min-height: 100%;
+        // object-position: 50% 50%;
         // filter: contrast(110%);
     }
 
@@ -56,17 +57,18 @@
         margin: 15px 20px;
         font-size: map.get(main.$font-sizes, size-3);
         color: white;
+        // background-color: grey;
+        height: 44px;
+        // width: 100%;
     }
 }
 
 @keyframes imgHoverAnimation {
     0% {
-        // opacity: 0;
         transform: translateY(2px);
     }
 
     100% {
-        // opacity: 1;
         transform: translateY(0);
     }
 }

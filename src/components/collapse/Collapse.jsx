@@ -18,7 +18,6 @@ const Collapse = ({ id, title, content }) => {
     } else {
         for (let i = 0; i < content.length; i++) {
             formatedContent.push(content[i]);
-            //formatedData.current = formatedContent;       //console.log("FORMATED CONTENT LIST : " + formatedContent);
         }
     }
 
@@ -78,8 +77,8 @@ const Collapse = ({ id, title, content }) => {
             <section className="collapse__view">
                 <div  className={`${viewerHiddenCssClass}`} role="presentation">
                     {
-                        isActive && title != "Équipements" ? <CollapseTextTemplate formatedData={formatedData} />       //+ console.log("CHILD STRING : " + formatedData.current)
-                                                           : <CollapseListTemplate />       //+ console.log("CHILD ARRAY : " + formatedContent)
+                        isActive && title == "Équipements" ? <CollapseListTemplate />                                   //+ console.log("CHILD ARRAY : " + formatedContent)
+                                                           : <CollapseTextTemplate formatedData={formatedData} />       //+ console.log("CHILD STRING : " + formatedData.current)
                     }
                 </div>
             </section>

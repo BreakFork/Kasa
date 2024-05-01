@@ -15,13 +15,16 @@
     left: auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     border-radius: 5px;
     color: white;
     line-height: 100%;
     padding-left: 20px;
     margin: 0;
+    background-color: grey;
     background-color: map.get(main.$colors, brand-clr);
+    // width: 50%;
 
     & {
         @include main.media-query(sm) {
@@ -32,12 +35,12 @@
         @include main.media-query(md) {
             font-size: map.get(main.$font-sizes, size-3);
             height: 3.25em;
-            border-radius: 10px;
         }
 
         @include main.media-query(lg) {
             font-size: map.get(main.$font-sizes, size-2);
             height: 52px;
+            border-radius: 10px;
         }
     }
 
@@ -103,23 +106,25 @@
     color: map.get(main.$colors, black-clr);
     line-height: 142.6%;
     text-align: justify;
-    word-spacing: -0.025rem;
-    white-space-collapse: break-spaces;
-    word-break: keep-all;
-    line-break: strict;
     padding: 23px 20px 15px 20px;
 
     @include main.media-query(sm) {
         font-size: map.get(main.$font-sizes, size-1);
+        white-space-collapse: break-spaces;
+        word-break: keep-all;
+        line-break: strict;
+        word-spacing: -0.025rem;
     }
 
     @include main.media-query(md) {
         font-size: map.get(main.$font-sizes, size-3);
         width: 100%;
+        // word-spacing: -0.050rem;
     }
 
     @include main.media-query(lg) {
         font-size: map.get(main.$font-sizes, size-3);
+        word-spacing: -0.010em;
     }
 }
 

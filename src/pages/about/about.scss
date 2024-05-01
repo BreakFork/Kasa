@@ -13,10 +13,6 @@
     }
 
     @include main.media-query(lg) {
-        padding: 0 5.868% 0 5.868%;
-
-        & .collapse__view—wrapper-content>li {
-            width: 50%;
-        }
+        padding: 2.375rem 153px 0 153px;
     } 
 }

@@ -1,8 +1,7 @@
 import { useRef }  from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Banner from "../../components/banner/Banner";
-// import BannerImgAboutPage from "../../assets/about.png";
-// import BannerGenericImg from "../../assets/banner-bkg.png";
+import "./header.scss";
 
 /**
  * HEADER COMPONENT

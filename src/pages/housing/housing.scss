@@ -8,8 +8,8 @@
     flex-direction: column;
 
     @include main.media-query(sm) {
-        padding: 27px 5.335% 0.375rem 5.335%;
-        gap: 10px;
+        padding: 20px 5.335% 0.375rem 5.335%;
+        gap: 12px;
     }
 
     @include main.media-query(md) {
@@ -17,7 +17,7 @@
     }
 
     @include main.media-query(lg) {
-        padding: 0 5.868% 0 5.868%;
+        padding: 50px 5.868% 0px 5.868%;
     }
 }
 
