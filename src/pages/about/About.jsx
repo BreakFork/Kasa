@@ -8,6 +8,8 @@ import Footer from "../../components/footer/Footer";
 import "./about.scss";
 
 const About = () => {
+    document.title = "À propos";
+
     return (
         <React.Fragment>
             <div className="wrapper">

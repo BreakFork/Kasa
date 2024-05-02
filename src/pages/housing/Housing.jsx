@@ -18,6 +18,8 @@ import Footer from "../../components/footer/Footer";
 import "./housing.scss";
 
 const Housing = () => {
+    document.title = "Location";
+
     // DATA 
     const { id } = useParams();                     //console.log("USEPARAM : " + id);   
     const housing = Data.find((e) => e.id === id);  //console.log("TEST : " + housing.pictures[2])

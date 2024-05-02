@@ -1,12 +1,14 @@
-import React from "react";
+import { Fragment } from "react";
 import Header from "../../components/header/Header";
 import ErrorNotFound from "../../components/errors/ErrorNotFound";
 import Footer from "../../components/footer/Footer";
 import "./error.scss";
 
 const Error = () => {
+    document.title = "Erreur 404";
+
     return (
-        <React.Fragment>
+        <Fragment>
             <div className="wrapper">
                 <Header bannerIsVisible="" bannerImg bannerTitle />
                     <main className="main error-page">
@@ -14,7 +16,7 @@ const Error = () => {
                     </main>
                 <Footer />
             </div>
-        </React.Fragment>
+        </Fragment>
     );
 };
 

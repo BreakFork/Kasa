@@ -5,6 +5,7 @@ import Gallery from "../../components/gallery/Gallery";
 import Footer from "../../components/footer/Footer";
 
 const Home = () => {
+    document.title = "Accueil";
 
     return (
         <Fragment>
