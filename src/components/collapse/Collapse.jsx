@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./collapse.scss";
 
 const Collapse = ({ id, title, content }) => {
@@ -9,12 +9,10 @@ const Collapse = ({ id, title, content }) => {
     const [viewerHiddenCssClass, setViewerHiddenCssClass] = useState(' viewer-hidden');
 
     const formatedContent = [];
-    const formatedData = useRef(null);                      //console.log("USEREF : " + formatedData.current);
 
-    // FORMATED CONTENT FOR FORMATED DATA (useRef)
+    // FORMATED CONTENT FOR FORMATED DATA
     if (!Array.isArray(content)) {
-        formatedContent.push(content);                      //console.log("FORMATED CONTENT TEXT : " + formatedData.current);
-        formatedData.current = formatedContent[0];
+        formatedContent.push(content); 
     } else {
         for (let i = 0; i < content.length; i++) {
             formatedContent.push(content[i]);
@@ -31,19 +29,19 @@ const Collapse = ({ id, title, content }) => {
 
     // COLLAPSE TEMPLATES ///////////////////////////////////////////////////////
     // TEXT TEMPLATE
-    const CollapseTextTemplate = ({ formatedData }) => {    //console.log("TEXT TEMPLATE : " + formatedData.current)
+    const CollapseTextTemplate = () => {     //console.log(formatedContent)
         return (
-            <p ref={formatedData}  id={`${id}-${title}`} role="region" aria-labelledby={`${id}-${title}`} className="collapse__view—wrapper-content">
-                {formatedData.current} 
+            <p id={`${id}-${title}`} role="region" aria-labelledby={`${id}-${title}`} className="collapse__view—wrapper-content">
+                {formatedContent} 
             </p>
         );
     };
 
     // LIST TEMPLATE
-    const CollapseListTemplate = () => {                    //console.log("LIST TEMPLATE : " + formatedData.current)
+    const CollapseListTemplate = () => {     //console.log(formatedContent)
         return (
             <ul id={`${id}-${title}`} role="region" aria-labelledby={`${id}-${title}`} className="collapse__view—wrapper-content">
-                { formatedContent.map((equipment, index) =>
+                {formatedContent.map((equipment, index) =>
                     <li key={`${equipment}-${index}`}>{equipment}</li>
                 )}
             </ul>
@@ -77,8 +75,8 @@ const Collapse = ({ id, title, content }) => {
             <section className="collapse__view">
                 <div  className={`${viewerHiddenCssClass}`} role="presentation">
                     {
-                        isActive && title === "Équipements" ? <CollapseListTemplate />                                   //+ console.log("CHILD ARRAY : " + formatedContent)
-                                                            : <CollapseTextTemplate formatedData={formatedData} />       //+ console.log("CHILD STRING : " + formatedData.current)
+                        isActive && title === "Équipements" ? <CollapseListTemplate />     
+                                                            : <CollapseTextTemplate />     
                     }
                 </div>
             </section>
