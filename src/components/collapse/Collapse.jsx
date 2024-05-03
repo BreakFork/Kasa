@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import "./collapse.scss";
 
 const Collapse = ({ id, title, content }) => {
@@ -7,17 +7,7 @@ const Collapse = ({ id, title, content }) => {
     const [ariaIsExpanded, setAriaIsExpanded] = useState(false);
     const [rotateCssClass, setRotateCssClass] = useState('svg');
     const [viewerHiddenCssClass, setViewerHiddenCssClass] = useState(' viewer-hidden');
-
-    const formatedContent = [];
-
-    // FORMATED CONTENT FOR FORMATED DATA
-    if (!Array.isArray(content)) {
-        formatedContent.push(content); 
-    } else {
-        for (let i = 0; i < content.length; i++) {
-            formatedContent.push(content[i]);
-        }
-    }
+    const collapseId = useId();
 
     // COLLAPSE BUTTON ACTIONS
     const handleClick = () => {
@@ -25,22 +15,28 @@ const Collapse = ({ id, title, content }) => {
         setAriaIsExpanded(ariaIsExpanded => !ariaIsExpanded);
         setRotateCssClass(isActive === true ? 'svg' : 'svg rotate');
         setViewerHiddenCssClass(isActive === true ? 'viewer-hidden' : 'collapse__view--wrapper')
-    }
+    };
 
     // COLLAPSE TEMPLATES ///////////////////////////////////////////////////////
     // TEXT TEMPLATE
-    const CollapseTextTemplate = () => {     //console.log(formatedContent)
+    const CollapseTextTemplate = ({content}) => {     //console.log(formatedContent)
+        const formatedContent = [];
+        formatedContent.push(content);
         return (
-            <p id={`${id}-${title}`} role="region" aria-labelledby={`${id}-${title}`} className="collapse__view—wrapper-content">
+            <p id={collapseId + `-${title}`} role="region" aria-labelledby={collapseId + `-${title}`} className="collapse__view—wrapper-content">
                 {formatedContent} 
             </p>
         );
     };
 
     // LIST TEMPLATE
-    const CollapseListTemplate = () => {     //console.log(formatedContent)
+    const CollapseListTemplate = ({content}) => {     //console.log(formatedContent)
+        const formatedContent = [];
+        for (let i = 0; i < content.length; i++) {
+            formatedContent.push(content[i]);
+        }
         return (
-            <ul id={`${id}-${title}`} role="region" aria-labelledby={`${id}-${title}`} className="collapse__view—wrapper-content">
+            <ul id={collapseId + `-${title}`} role="region" aria-labelledby={collapseId + `-${title}`} className="collapse__view—wrapper-content">
                 {formatedContent.map((equipment, index) =>
                     <li key={`${equipment}-${index}`}>{equipment}</li>
                 )}
@@ -58,8 +54,8 @@ const Collapse = ({ id, title, content }) => {
                     // next line --> only because eslint attempts a string "true" or "false"  neither 0 || 1 (for terminal purpose)
                     // eslint-disable-next-line 
                     aria-expanded={`${ariaIsExpanded}`}
-                    aria-owns={`${id}-${title}`}
-                    id={`${id}-${title}`}
+                    aria-owns={collapseId + `-${title}`}
+                    id={collapseId + `-${title}`}
                     focusable="true"
                     onClick={handleClick}>
                     <svg className={`${rotateCssClass}`}
@@ -75,8 +71,8 @@ const Collapse = ({ id, title, content }) => {
             <section className="collapse__view">
                 <div  className={`${viewerHiddenCssClass}`} role="presentation">
                     {
-                        isActive && title === "Équipements" ? <CollapseListTemplate />     
-                                                            : <CollapseTextTemplate />     
+                        isActive && title === "Équipements" ? <CollapseListTemplate content={content} />     
+                                                            : <CollapseTextTemplate content={content} />     
                     }
                 </div>
             </section>
