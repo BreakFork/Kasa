@@ -18,7 +18,7 @@ const About = () => {
                     {Data.map((item) => {
                         return (
                             <Fragment key={item.id}>
-                                <Collapse id={item.id} title={item.title} content={item.content} />
+                                <Collapse title={item.title} content={item.content} />
                             </Fragment>
                         )
                     })}
