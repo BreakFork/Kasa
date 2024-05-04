@@ -1,7 +1,7 @@
 import React, { useState, useId } from "react";
 import "./collapse.scss";
 
-const Collapse = ({ id, title, content }) => {
+const Collapse = ({ title, content }) => {
     // HOOKS
     const [isActive, setIsActive] = useState(false);
     const [ariaIsExpanded, setAriaIsExpanded] = useState(false);
